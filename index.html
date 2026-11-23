@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sindicato CECyTE - EMSaD Tlaxcala</title>
+<link rel="stylesheet" href="./css/portada.css">
+<style>
+
+footer p { font-size: 11px; color: #AAB6BD; letter-spacing: 1px; }
+footer span { color: var(--naranja); }
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 950px) {
+    .contenido { padding: 55px 6%; }
+    .grafico { width: 300px; height: 300px; }
+    .circulo.uno { width: 280px; height: 280px; }
+    .circulo.dos { width: 220px; height: 220px; }
+    .circulo.tres { width: 170px; height: 170px; }
+    .logo-central { width: 145px; height: 145px; }
+}
+@media (max-width: 700px) {
+    header { padding: 18px 5%; }
+    nav { display: none; }
+    .logo img { width: 60px; height: 60px; }
+    .logo-texto h2 { font-size: 13px; }
+    .logo-texto p { font-size: 9px; }
+    .contenido {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 7%;
+        gap: 30px;
+    }
+    .etiqueta { font-size: 10px; }
+    .informacion p { font-size: 14px; }
+    .grafico { width: 260px; height: 260px; }
+    .circulo.uno { width: 245px; height: 245px; }
+    .circulo.dos { width: 195px; height: 195px; }
+    .circulo.tres { width: 145px; height: 145px; }
+    .logo-central { width: 125px; height: 125px; }
+    .engranaje { font-size: 55px; }
+    footer { flex-direction: column; gap: 10px; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="portada">
+    <header>
+        <div class="logo">
+            <img src="/img/logo-sindicato.png" alt="Logotipo del Sindicato CECyTE EMSaD">
+            <div class="logo-texto">
+                <h2>SINDICATO CECyTE–EMSaD</h2>
+                <p>TLAXCALA</p>
+            </div>
+        </div>
+   
+    </header>
+
+    <main class="contenido" id="inicio">
+        <section class="informacion">
+            <div class="etiqueta">Identidad · Unidad · Representación</div>
+            <h1>SINDICATO<br>CECyTE–<span>EMSaD</span></h1>
+            <h2>Estado de Tlaxcala</h2>
+            <p>
+                Un espacio de representación, comunicación y encuentro para quienes forman parte de nuestra comunidad educativa.
+                Trabajamos por la unidad, la defensa de nuestros derechos y el fortalecimiento de nuestra organización sindical.
+            </p>
+            <a href="./paginas/inicio.html" class="boton">INGRESAR AL SITIO <span>→</span></a>
+        </section>
+
+        <section class="grafico" aria-label="Emblema institucional">
+            <div class="circulo uno"></div>
+            <div class="circulo dos"></div>
+            <div class="circulo tres"></div>
+            <div class="engranaje uno">⚙️</div>
+            <div class="engranaje dos">⚙️</div>
+            <div class="punto uno"></div>
+            <div class="punto dos"></div>
+            <div class="logo-central">
+                <img src="/img/logo-sindicato.png" alt="Emblema sindical">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 SINDICATO CECyTE–EMSaD TLAXCALA</p>
+        <p><span>UNIDAD</span> · REPRESENTACIÓN · COMPROMISO</p>
+</div>
+<script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+:root {
+    --naranja: #F04416;
+    --carbon: #252A2D;
+    --gris: #62696D;
+    --turquesa: #079BA6;
+    --blanco: #FFFFFF;
+    --azul: #173F55;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--carbon);
+    color: var(--blanco);
+    min-height: 100vh;
+}
+.portada {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at 85% 45%, rgba(7,155,166,.18), transparent 35%),
+        linear-gradient(120deg, #202629 0%, #293237 55%, #173F55 100%);
+}
+.portada::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 45px 45px;
+    pointer-events: none;
+}
+
+/* HEADER FLOTANTE - SIN RECTANGULO, SIN COLOR DISTINTO */
+header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 7%;
+    background: transparent;
+    border: none;
+}
+
+.menu-boton { display: none; }
+
+.logo { display: flex; align-items: center; gap: 14px; }
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+    padding: 3px;
+}
+.logo-texto h2 { font-size: 16px; letter-spacing: 1px; font-weight: 800; }
+.logo-texto p { font-size: 11px; color: #B8C2C8; letter-spacing: 3px; margin-top: 4px; }
+nav { display: flex; align-items: center; gap: 30px; }
+nav a { color: #D8E0E4; text-decoration: none; font-size: 13px; transition: .3s; }
+nav a:hover { color: var(--naranja); }
+
+.contenido {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 65px 10%;
+    gap: 40px;
+}
+.informacion { max-width: 650px; animation: aparecer 1s ease; }
+.etiqueta {
+    display: inline-block;
+    border-left: 4px solid var(--turquesa);
+    padding: 9px 15px;
+    background: rgba(7,155,166,.12);
+    color: #65D1D5;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+.informacion h1 {
+    font-size: clamp(38px, 5.5vw, 70px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+.informacion h1 span { color: var(--naranja); }
+.informacion h2 {
+    color: #C9D4D9;
+    font-size: clamp(17px, 2vw, 23px);
+    font-weight: 400;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+.informacion p {
+    max-width: 520px;
+    color: #B6C2C8;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-top: 25px;
+}
+.boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 35px;
+    padding: 16px 27px;
+    background: var(--naranja);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: .35s;
+    box-shadow: 0 8px 25px rgba(240,68,22,.2);
+}
+.boton:hover {
+    background: var(--turquesa);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(7,155,166,.3);
+}
+.boton span { font-size: 20px; transition: .3s; }
+.boton:hover span { transform: translateX(6px); }
+.grafico {
+    position: relative;
+    width: 390px;
+    height: 390px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circulo { position: absolute; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; }
+.circulo.uno { width: 350px; height: 350px; }
+.circulo.dos { width: 275px; height: 275px; border-color: rgba(240,68,22,.55); }
+.circulo.tres { width: 210px; height: 210px; border-color: rgba(7,155,166,.6); }
+.logo-central {
+    position: relative;
+    z-index: 2;
+    width: 185px;
+    height: 185px;
+    background: white;
+    border: 7px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 60px rgba(7,155,166,.2);
+    overflow: hidden;
+}
+.logo-central img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.engranaje {
+    position: absolute;
+    color: var(--naranja);
+    font-size: 75px;
+    opacity: .8;
+    animation: girar 25s linear infinite;
+}
+.engranaje.uno { top: 5px; right: 30px; }
+.engranaje.dos {
+    bottom: 15px;
+    left: 5px;
+    font-size: 55px;
+    color: var(--turquesa);
+    animation-direction: reverse;
+}
+.punto {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--turquesa);
+    box-shadow: 0 0 15px var(--turquesa);
+}
+.punto.uno { top: 65px; left: 40px; }
+.punto.dos {
+    bottom: 55px;
+    right: 30px;
+    background: var(--naranja);
+    box-shadow: 0 0 15px var(--naranja);
+}
+footer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    border-top: 1px solid rgba(255,255,255,.12);
+}
+
+/* MENU MOVIL FLOTANTE - CHIQUITO, NO GIGANTE */
+@media (max-width: 850px) {
+  header { flex-wrap: nowrap; }
+  .menu-boton {
+    display: block;
+    background: transparent;
+    color: white;
+    border: 1px solid #ffffff50;
+    padding: 8px 13px;
+    border-radius: 5px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px;
+    background: rgba(37,42,45,.95);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  }
+  nav.abierto { display: flex; }
+  nav a {
+    padding: 10px 12px;
+    width: 100%;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+  nav a:hover { background: rgba(255,255,255,.08); }
+  .contenido {
+    flex-direction: column;
+    padding: 40px 7%;
+    text-align: center;
+  }
+  .grafico {
+    width: 300px;
+    height: 300px;
+  }
+}
